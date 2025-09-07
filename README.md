@@ -30,3 +30,14 @@ int b= 2;
 float c=2;
 System.out.print(a/b)//2
 System.out.print(a/c)//2.5
+
+
+При явной конвертации большего типа данных к меньшему происходит потеря данных, лишние биты отбрасываются
+int a=258;
+byte b=(byte) a; //2
+
+Ввод данных:
+Scanner console = new Scanner(System.in);
+String name=console.nextLine();
+int age = console.nextInt();
+
