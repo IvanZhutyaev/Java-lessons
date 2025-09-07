@@ -1,12 +1,30 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        String name="Ivan";
-        int age=15;
-        final int RETIREMENTAGE=65;
-        System.out.println("Hello world");
-        System.out.format("Hello. My name is %s, i am %d years old, IT'S LESS THAN %d", name, age, RETIREMENTAGE);
+        Scanner console = new Scanner(System.in);
+        System.out.println("Введите +/-/:/*");
+        String a=console.nextLine();
+        System.out.println("Введите первое число:");
+        float b=console.nextFloat();
+        System.out.println("Введите Второе число:");
+        float c=console.nextFloat();
+
+        if(a.equals("+")){
+            System.out.println(b+c);
+        }
+        else if(a.equals("-")){
+            System.out.println(b-c);
+        }
+        else if(a.equals("/")){
+            System.out.println(b/c);
+        }
+        else if(a.equals("*")){
+            System.out.println(b*c);
+        }
+
     }
 
 

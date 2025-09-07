@@ -41,3 +41,5 @@ Scanner console = new Scanner(System.in);
 String name=console.nextLine();
 int age = console.nextInt();
 
+.equals <-> ==
+
