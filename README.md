@@ -12,3 +12,12 @@ JVM совместно со стандартными Java-библиотекам
 JDK(Java development kit+инструменты для Java-разработчиков)->JRE(Java Runtime Environment+набор стандартных Java-библиотек)->JVM(Java Virtual Machine)
 sout - System.out.println("Hello world");
 psvm - public static void main(){}
+
+Форматированный вывод
+System.out.format("Hello. My name is %s, i am %d years old ", name, age);
+
+System - класс, который позволяет разработчику возможность общение с окружающей его средой - ОС
+
+Константа объявляется ключевым словом - final:
+final int LIMIT=5;
+Название констант в Java-БОЛЬШИМИ БУКВАМИ
