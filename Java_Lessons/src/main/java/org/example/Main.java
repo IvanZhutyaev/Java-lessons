@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         System.out.println("Введите +/-/:/*");
+        System.out.println("");
         String a=console.nextLine();
         System.out.println("Введите первое число:");
         float b=console.nextFloat();
