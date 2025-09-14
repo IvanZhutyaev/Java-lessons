@@ -55,3 +55,10 @@ case 3:
 System.out.println("3");
 default:
 System.out.println("default");
+
+Тернарная операция:
+z=(x<y)?x+y:x-y;
+(x<y) - условие
+?-если
+x+y - если true
+x-y - если false
