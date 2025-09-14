@@ -93,3 +93,5 @@ class StringBuffer:
 Уже изменяемый
 StringBuffer sb2 = new StringBuffer("Not empty")
 append - метод для конкатенации(просто так перезаписать строку не получится!!!)
+StringBuffer.append можно добавить любой тип данных
+![img.png](img.png)
