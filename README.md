@@ -86,3 +86,10 @@ String s1= new String("Hello")
 
 length() - длина строки
 concat(String) - сложение строк(аналог +)
+indexof(String) - найти индекс позиции первого элемента в строке(в скобках указываешь символ, диапозон)
+substring(..) - получить подстроку(по факту вырезать кусок)
+
+class StringBuffer:
+Уже изменяемый
+StringBuffer sb2 = new StringBuffer("Not empty")
+append - метод для конкатенации(просто так перезаписать строку не получится!!!)
