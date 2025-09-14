@@ -64,3 +64,11 @@ x+y - если true
 x-y - если false
 
 ЦИКЛЫ
+break - остановить цикл
+continue - пропустить круг и перейти к другому кругу
+
+String
+Классы строк: String, StringBuffer StringBullder
+
+class String:
+У класса String не может быть наследников(final) и экземпляры класса нельзя изменить после создания(immutable)
