@@ -4,26 +4,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner console = new Scanner(System.in);
-        System.out.println("Введите +/-/:/*");
-        System.out.println("");
-        String a=console.nextLine();
-        System.out.println("Введите первое число:");
-        float b=console.nextFloat();
-        System.out.println("Введите Второе число:");
-        float c=console.nextFloat();
-
-        if(a.equals("+")){
-            System.out.println(b+c);
-        }
-        else if(a.equals("-")){
-            System.out.println(b-c);
-        }
-        else if(a.equals("/")){
-            System.out.println(b/c);
-        }
-        else if(a.equals("*")){
-            System.out.println(b*c);
+        int a=5;
+        switch (a){
+            case 1:
+                System.out.println("1");
+            case 2:
+                System.out.println("2");
+            case 3:
+                System.out.println("3");
+            default:
+                System.out.println("default");
         }
 
     }
