@@ -11,7 +11,7 @@ public class Main {
         while(matcher.find()){
 
             result++;
-        }
+        }ё
         System.out.println(result);
     }
 }
