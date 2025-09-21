@@ -4,9 +4,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Pattern pattern = Pattern.compile("bob");
-        Matcher matcher= pattern.matcher("aboba aboba aboba");
-        while(matcher.find()) //ищет любое совпадение
-            System.out.println(matcher.group()); // bob bob bob(группирует ответ)
+        String text ="Fifa the best game!";
+        Pattern pattern = Pattern.compile("[,|!|.]");
+        Matcher matcher = pattern.matcher(text);
+        int result=0;
+        while(matcher.find()){
+
+            result++;
+        }
+        System.out.println(result);
     }
 }
