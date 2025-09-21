@@ -121,3 +121,7 @@ Pattern pattern = Pattern.compile("bob");
 Matcher matcher= pattern.matcher("aboba aboba aboba");
 while(matcher.find()) //ищет любое совпадение
 System.out.println(matcher.group()); // bob bob bob(группирует ответ)
+
+
+matcher.matches() - любое вхождение подстроки в строке должно совладать с регулярным выражение 
+matcher.find() - полное совпадение строки на регулярное выражение
