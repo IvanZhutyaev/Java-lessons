@@ -111,3 +111,8 @@ String a= "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-z
 
 String[] words = text.split("\\s*(\\s|,|!|\\.)\\s*");
 Метод split применяется для разделения строки
+
+Pattern pattern = Pattern.compile("bob");
+Matcher matcher= pattern.matcher("bob1");
+System.out.println(matcher.find()); //true (ищет любое совпадение)
+System.out.println(matcher.matches()); //false (смотрит в общем всю строку)
