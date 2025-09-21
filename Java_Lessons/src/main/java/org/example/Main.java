@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String text ="Fifa the best game!";
-        Pattern pattern = Pattern.compile("[,|!|.]");
-        Matcher matcher = pattern.matcher(text);
-        int result=0;
-        while(matcher.find()){
-
-            result++;
-        }ё
-        System.out.println(result);
+        int nums[]=new int[10000];
+        Random rand=new Random();
+        for(int i=0;i<10000;i++){
+            int num=rand.nextInt(10000);
+            nums[i]=num;
+        }
+        for(int num:nums){
+            System.out.println(num);
+        }
     }
 }
