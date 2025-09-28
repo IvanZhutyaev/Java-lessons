@@ -4,13 +4,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        int[]numbers=new int[3];
         try{
-            int[]numbers=new int[3];
-            numbers[4]=45;
-            System.out.println(numbers[4]);
+
+            numbers[6]=45;
+            numbers[6]=Integer.parseInt("gdf");
         }
-        catch (Exception ex){
-            ex.printStackTrace();
+        catch (ArrayIndexOutOfBoundsException ex){
+            System.out.println("Выход за пределы массива");
+        }
+        catch (NumberFormatException ex){
+            System.out.println("Ошибка преобразования из строки в число");
         }
         System.out.println("Программа завршена");
     }
