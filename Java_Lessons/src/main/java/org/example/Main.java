@@ -4,16 +4,19 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        try{
-            Scanner in = new Scanner(System.in);
-            int x=in.nextInt();
-            if(x>=30){
-                throw new Exception("Число x должно быть меньше 30!");
+        try {
+            Scanner scanner = new Scanner(System.in);
+            int a = scanner.nextInt();
+            if(a==0){
+                throw new Exception();
             }
+
+        }
+        catch (InputMismatchException ex){
+            System.out.println("Буквы вводить нельзя!");
         }
         catch (Exception ex){
-            System.out.println(ex.getMessage());
+            System.out.println("0 вводить нельзя!");
         }
-        System.out.println("Программа завершена");
     }
 }
