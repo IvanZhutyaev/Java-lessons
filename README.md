@@ -180,3 +180,12 @@ Enum- перечисления
 Работа с файлами в JAVA
 класс FileWriter - создание и запись файла
 класс FileReader - считывание файла
+
+FileWriter fw=new FileWriter("MyFile.txt")
+FileReader fr=new FileReader("MyFile.txt")
+
+При создании объекта FileWriter, если файла нет - создаётся автоматически, если есть - записывает в него
+Всегда нужно закрывать поток!!!
+fw.close()
+fr.close()
+FileWriter/FileReader - это потоки, их нужно не только "открыть"(то-есть объявить), но и "закрыть"
