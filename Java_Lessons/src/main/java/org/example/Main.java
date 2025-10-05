@@ -6,58 +6,59 @@ public class Main {
 
 
     public static void main(String[] args) {
-        enum Country{
-            CANADA("CAD"){
-                @Override
-                void sayHello(){
-                    System.out.println("Hello");
-                }
-            },
-            POLAND("PLN"){
-                @Override
-                void sayHello(){
-                    System.out.println("nindfowsniofdn");
-                }
-            },
-            GERMANY("EUR"){
-                @Override
-                void sayHello(){
-                    System.out.println("HAI");
-                }
-            },
-            LAOPARAS{
-                @Override
-                void sayHello(){
-                    System.out.println("POshel na mateshy");
-                }
-            },
-            ZIMKABU(){
-                @Override
-                void sayHello(){
-                    System.out.println("Shakalaka");
-                }
-            };
-            String currency;
-            Country(String currency){
-                this.currency=currency;
+        enum Enum{
+            SUMMER(30),
+            WINTER(-20),
+            FALL(15),
+            SPRING(20);
+            int avgTemp;
+            Enum(int avgTemp){
+                this.avgTemp=avgTemp;
             }
-
-            Country(){}
-            boolean hasCurrency(){
-                return currency!=null;
-            }
-            abstract void sayHello();
         }
-        for (Country country:Country.values())
-            if(country.hasCurrency()){
-                System.out.println(country+" has currency, "+country.currency);
+        for (Enum val:Enum.values()){
+            System.out.println(val.name()+" , "+val.avgTemp);
+        }
 
-            }else {
-                System.out.println(country+" has NOT currency, "+country.currency+" LOL");
+        enum Role { ADMIN, MODERATOR, USER, GUEST;
+            void getPermissions()
+            {
+
+                switch (this){
+                    case ADMIN -> System.out.println("полный доступ");
+                    case MODERATOR -> System.out.println("управление контентом");
+                    case USER -> System.out.println("чтение и комментриование");
+                    case GUEST -> System.out.println("только чтение");
+
+                }
 
             }
-        System.out.println();
-        for (Country country:Country.values())
-            country.sayHello();
+
+        }
+        for (Role role:Role.values()){
+            role.getPermissions();
+        }
+
+        enum Operation{
+            PLUS,
+            MINUS,
+            MULTIPLY,
+            DIVIDE;
+
+            void apply(double a, double b){
+                double result=0;
+                switch (this){
+                    case PLUS -> {
+                        result=a+b;
+                    }
+                    case MINUS -> result=a-b;
+                    case MULTIPLY -> result=a*b;
+                    case DIVIDE -> result=a/b;
+                }
+                System.out.println(result);
+            }
+        }
+        Operation plus=Operation.PLUS;
+        plus.apply(5,6);
     }
 }
