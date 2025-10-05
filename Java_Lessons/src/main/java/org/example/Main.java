@@ -56,5 +56,8 @@ public class Main {
                 System.out.println(country+" has NOT currency, "+country.currency+" LOL");
 
             }
+        System.out.println();
+        for (Country country:Country.values())
+            country.sayHello();
     }
 }
