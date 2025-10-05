@@ -5,20 +5,27 @@ import java.util.Scanner;
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void GetFromUserAndWrite() throws Exception {
+        Scanner scan=new Scanner(System.in);
+        String result=scan.nextLine();
         FileWriter fw = new FileWriter("file.txt");
-        for (int i = 1;i<101;i++)
-        {
-            fw.write(i + "\n");
-        }
+        fw.write(result);
         fw.close();
-        FileReader fr=new FileReader("file.txt");
-        Scanner scan=new Scanner(fr);
-        int i =1;
-        while (scan.hasNextLine()){
-            System.out.println(i+":"+scan.nextLine());
-            i++;
+
+    }
+    public static void GetFromFileAndWriteToNewFile() throws Exception {
+        FileReader reader=new FileReader("file.txt");
+        Scanner scan=new Scanner(reader);
+        if(scan.hasNextLine()){
+            FileWriter writer=new FileWriter("file1.txt");
+            writer.write(scan.nextLine());
+            writer.close();
         }
-        fr.close();
+        reader.close();
+
+    }
+    public static void main(String[] args) throws Exception {
+        GetFromUserAndWrite();
+        GetFromFileAndWriteToNewFile();
     }
 }
