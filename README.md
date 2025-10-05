@@ -189,5 +189,6 @@ FileReader fr=new FileReader("MyFile.txt")
 fw.close()
 fr.close()
 FileWriter/FileReader - это потоки, их нужно не только "открыть"(то-есть объявить), но и "закрыть"
-fw.write("Hello") - запись в текстовый файл
+fw.write("Hello") - запись в текстовый файл(перезапись)
 Записывать в текстовый файл можно только текст!!!
+fw.append("sads") - дописать файл
