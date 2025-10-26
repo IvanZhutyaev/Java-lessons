@@ -241,3 +241,5 @@ class Book implement Printable, Searchable{
 interface BookPrintable extends Printable{
     void paint();
 }
+
+Интерфейс может быть вложенным
