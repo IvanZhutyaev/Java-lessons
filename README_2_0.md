@@ -236,3 +236,8 @@ interface Searchable{
 class Book implement Printable, Searchable{
 //sfdksok
 }
+
+ИНТЕРФЕЙСЫ МОГУТ НАСЛЕДОВАТЬ ДРУГИЕ ИНТЕРФЕЙСЫ
+interface BookPrintable extends Printable{
+    void paint();
+}
