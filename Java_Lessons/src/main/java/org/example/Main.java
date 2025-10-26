@@ -8,7 +8,7 @@ public class Main {
         printable.print();
         Journal j1=new Journal("SDD");
         j1.print();
-
+        Printable.read();
 
     }
 }
@@ -17,6 +17,9 @@ interface Printable{
     default void print(){
         System.out.println("aaa");
     };
+    static void read(){
+        System.out.println("READ");
+    }
 }
 class Book implements Printable{
     String name;
