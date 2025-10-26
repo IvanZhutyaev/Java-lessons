@@ -1,57 +1,36 @@
 package org.example;
 
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Printable printable = new Book("Java.Complete Reference", "ABRAM");
-        printable.print();
-        printable=new Journal("POLICY");
-        printable.print();
-        Journal j1=new Journal("SDD");
-        j1.print();
-        Printable.read();
+        Plane plane=new Plane();
+        plane.Takedown();
+        plane.Takeoff();
 
+        Golub golub=new Golub();
+        golub.Takedown();
+        golub.Takeoff();
     }
-
-
-    interface Printable{
-        default void print(){
-            System.out.println("aaa");
-        };
-        static void read(){
-            System.out.println("READ");
-        }
+    interface Flyable{
+        void Takeoff();
+        void Takedown();
     }
-    static class Book implements Printable{
-        String name;
-        String author;
-        Book(String name, String author){
-            this.name=name;
-            this.author=author;
-        }
-        public void print(){
-            System.out.println(name+author);
-        }
-    }
-
-    static class Journal implements Printable{
-        private String name;
-        String getName(){
-            return name;
-        }
-        Journal(String name){
-            this.name=name;
+    static class Golub implements Flyable{
+        public void Takeoff() {
+            System.out.println("ГОК-ГОК ВЗЛЕТАЮ");
         }
 
-    }
-    static void read(Printable p){
-        p.print();
-    }
-    static Printable createPrintable(String name, boolean option){
-        if(option){
-            return new Book(name, "aaa");
+        public void Takedown() {
+            System.out.println("ГОК-ГОК МЫ ПАДАЕМ");
         }
-        else {
-            return new Journal(name);
+    }
+    static class Plane implements Flyable{
+        public void Takeoff() {
+            System.out.println("ВЗЛЕТАЕМ!");
+        }
+        public void Takedown() {
+            System.out.println("Срочная посадка");
         }
     }
 }
