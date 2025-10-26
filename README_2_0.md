@@ -219,3 +219,5 @@ Printable printable = new Book("Java.Complete Reference", "ABRAM");
 printable.print();
 printable=new Journal("POLICY");
 printable.print();
+
+модификатор default позволяет методу интерфейса иметь базовую реализацию
