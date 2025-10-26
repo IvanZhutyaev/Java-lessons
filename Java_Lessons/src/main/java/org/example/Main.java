@@ -1,33 +1,33 @@
 package org.example;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Plane plane=new Plane();
-        plane.Takedown();
-        plane.Takeoff();
 
-        Golub golub=new Golub();
-        golub.Takedown();
-        golub.Takeoff();
-    }
-    interface Flyable{
-        void Takeoff();
-        void Takedown();
-    }
-    static class Golub implements Flyable{
-        public void Takeoff() {
-            System.out.println("ГОК-ГОК ВЗЛЕТАЮ");
-        }
+        Button button = new Button(new ButtonClickHandler());
+        button.click();
+        button.click();
+        button.click();
 
-        public void Takedown() {
-            System.out.println("ГОК-ГОК МЫ ПАДАЕМ");
+
+    }
+
+    static class ButtonClickHandler implements EventHendler{
+        public void execute(){
+            System.out.println("Кнопка нажата");
         }
     }
-    static class Plane implements Flyable{
-        public void Takeoff() {
-            System.out.println("ВЗЛЕТАЕМ!");
+    interface EventHendler{
+        void execute();
+    }
+    static class Button{
+        EventHendler handler;
+        Button(EventHendler action){
+            this.handler=action;
         }
-        public void Takedown() {
-            System.out.println("Срочная посадка");
+        public void click(){
+            handler.execute();
         }
     }
 }
