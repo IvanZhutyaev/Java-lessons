@@ -11,35 +11,47 @@ public class Main {
         Printable.read();
 
     }
-}
 
-interface Printable{
-    default void print(){
-        System.out.println("aaa");
-    };
-    static void read(){
-        System.out.println("READ");
-    }
-}
-class Book implements Printable{
-    String name;
-    String author;
-    Book(String name, String author){
-        this.name=name;
-        this.author=author;
-    }
-    public void print(){
-        System.out.println(name+author);
-    }
-}
 
-class Journal implements Printable{
-    private String name;
-    String getName(){
-        return name;
+    interface Printable{
+        default void print(){
+            System.out.println("aaa");
+        };
+        static void read(){
+            System.out.println("READ");
+        }
     }
-    Journal(String name){
-        this.name=name;
+    static class Book implements Printable{
+        String name;
+        String author;
+        Book(String name, String author){
+            this.name=name;
+            this.author=author;
+        }
+        public void print(){
+            System.out.println(name+author);
+        }
     }
 
+    static class Journal implements Printable{
+        private String name;
+        String getName(){
+            return name;
+        }
+        Journal(String name){
+            this.name=name;
+        }
+
+    }
+    static void read(Printable p){
+        p.print();
+    }
+    static Printable createPrintable(String name, boolean option){
+        if(option){
+            return new Book(name, "aaa");
+        }
+        else {
+            return new Journal(name);
+        }
+    }
 }
