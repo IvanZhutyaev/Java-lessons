@@ -1,33 +1,55 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
-        Button button = new Button(new ButtonClickHandler());
-        button.click();
-        button.click();
-        button.click();
-
-
+        Shape circle=new Circle(3.8);
+        Shape rectangle=new Rectangle(2.7, 4.6);
+        Shape triangle=new Triangle(4.5, 3.6);
+        circle.Area();
+        rectangle.Area();
+        triangle.Area();
     }
 
-    static class ButtonClickHandler implements EventHendler{
-        public void execute(){
-            System.out.println("Кнопка нажата");
+    interface Shape{
+        void Area();
+    }
+
+    static class Circle implements Shape{
+        double p=3.14;
+        double r;
+        double S;
+        Circle(double r){
+            this.r=r;
+        }
+        public void Area() {
+            S=p*(r*r);
+            System.out.println(S);
         }
     }
-    interface EventHendler{
-        void execute();
-    }
-    static class Button{
-        EventHendler handler;
-        Button(EventHendler action){
-            this.handler=action;
+    static class Triangle implements Shape{
+        double a;
+        double h;
+        double S;
+        Triangle(double a, double h){
+            this.a=a;
+            this.h=h;
         }
-        public void click(){
-            handler.execute();
+        public void Area() {
+            S=(0.5*h*a);
+            System.out.println(S);
+        }
+    }
+    static class Rectangle implements Shape{
+        double a;
+        double b;
+        double S;
+        Rectangle(double a, double b){
+            this.b=b;
+            this.a=a;
+        }
+        public void Area() {
+            S=a*b;
+            System.out.println(S);
         }
     }
 }
