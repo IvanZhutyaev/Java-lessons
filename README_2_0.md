@@ -225,3 +225,14 @@ printable.print();
 В интерфейсе могут быть статичные методы
 
 В интерфейсах могут быть определены статические константы
+
+Множественная реализация интерфейсов:
+interface Printable{
+//sdada
+}
+interface Searchable{
+//sdada
+}
+class Book implement Printable, Searchable{
+//sfdksok
+}
