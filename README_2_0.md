@@ -213,3 +213,9 @@ ALT+Insert - автогенерация
 Если класс применяет интерфейс, то он должен реализовать все методы этого интерфейса
 
 Нельзя создавать объекты интерфейса
+
+Приведение к общему типу:
+Printable printable = new Book("Java.Complete Reference", "ABRAM");
+printable.print();
+printable=new Journal("POLICY");
+printable.print();
