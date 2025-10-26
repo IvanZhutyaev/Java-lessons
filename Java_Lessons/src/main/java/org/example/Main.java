@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Book b1 = new Book("ABRAM STORY", "ABRAAAAM");
         b1.print();
+        Journal j1=new Journal("ABRAAAAAAAAM");
+        j1.print();
     }
 }
 
