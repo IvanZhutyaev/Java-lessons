@@ -6,11 +6,17 @@ public class Main {
         printable.print();
         printable=new Journal("POLICY");
         printable.print();
+        Journal j1=new Journal("SDD");
+        j1.print();
+
+
     }
 }
 
 interface Printable{
-    void print();
+    default void print(){
+        System.out.println("aaa");
+    };
 }
 class Book implements Printable{
     String name;
@@ -32,7 +38,5 @@ class Journal implements Printable{
     Journal(String name){
         this.name=name;
     }
-    public void print(){
-        System.out.println(name);
-    }
+
 }
