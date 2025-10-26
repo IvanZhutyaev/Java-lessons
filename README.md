@@ -322,3 +322,13 @@ interface BookPrintable extends Printable{
 
 ### Механизм обратного вызова
 - `callback` - действие в ответ на какое-то действие
+
+### Одноразовый класс(Анонимный класс)
+
+```java
+Button button = new Button(new EventHandler(){
+    public void execute(){
+        System.out.println("Пуск");
+    }
+});
+```
