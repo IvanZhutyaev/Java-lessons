@@ -340,3 +340,34 @@ Button button = new Button(new EventHandler(){
 - Интерфейс не может содержать поля экземпляров. Поля, которые могут появиться в интерфейсе, обязаны быть объявлены и статическими, и final
 - Интерфейс не расширяется классом, он реализуется классом
 - Интерфейс может расширить множество интерфейсов
+
+
+## Обобщение JAVA(Generics)
+Обобщение позволяют уйти от жесткого определения используемых типов
+
+### Пример обобщение
+
+```java
+public static void main(String args[]){
+    Account<String> acc1 = new Account<String>("123123", 123);
+    String accID=acc1.getId();
+    System.out.println(accID);
+
+    Account<Integer> acc2 = new Account<Integer>(123123, 123);
+    Integer accID1=acc2.getId();
+    System.out.println(accID1);
+}
+
+static class Account<T> {
+    private T id;
+    private int sum;
+    Account(T id, int sum){
+        this.id=id;
+        this.sum=sum;
+    }
+    public T getId(){return id;}
+    public int getSum(){return sum;}
+    public void getId(int sum){this.sum=sum;}
+}
+```
+#### Интерфейсы также могут быть обобщёнными
