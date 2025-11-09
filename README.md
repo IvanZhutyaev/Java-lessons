@@ -345,7 +345,7 @@ Button button = new Button(new EventHandler(){
 ## Обобщение JAVA(Generics)
 Обобщение позволяют уйти от жесткого определения используемых типов
 
-### Пример обобщение
+### Пример обобщения
 
 ```java
 public static void main(String args[]){
@@ -371,3 +371,45 @@ static class Account<T> {
 }
 ```
 #### Интерфейсы также могут быть обобщёнными
+
+### Пример обобщенного интерфейса
+
+```java
+public static void main(String args[]){
+        Accountable<String> acc1 = new Account("asfs", 235423);
+        Account acc2 = new Account("123", 577);
+        System.out.println(acc1.getID());
+        System.out.println(acc2.getID());
+
+    }
+    
+    interface Accountable<T>{
+        T getID();
+        int getSum();
+        void setSum(int sum);
+    }
+    
+    static class Account implements Accountable<String>{
+        private String id;
+        private int sum;
+        
+        Account(String id, int sum){
+            this.id=id;
+            this.sum=sum;
+        }
+        @Override
+        public String getID() {
+            return id;
+        }
+
+        @Override
+        public int getSum() {
+            return sum;
+        }
+
+        @Override
+        public void setSum(int sum) {
+            this.sum=sum;
+        }
+    }
+```
