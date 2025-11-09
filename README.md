@@ -456,3 +456,11 @@ class DepositAccount<T> extends Account<T>{
     }
 }
 ```
+### Если класс наследник имеет свои обобщённые параметры, то указываются типы родителей и типы наследника
+```java
+class DepositAccount<T,S> extends Account<T>{} //T - тип родителя(Account), а S - тип наследника(DepositAccount)
+```
+**Пример создания объекта**
+```java
+DepositAccount<Integer, String> depositAccount = new DepositAccount(20, "Том"); //Integer - тип для родителя, а String - тип для наследника
+```
