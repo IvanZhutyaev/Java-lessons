@@ -1,6 +1,6 @@
 
 # Java-lessons
-My java lessons
+Лекции по ЯП Java
 
 ## Java-компилятор
 - Байт-код - нужен для кроссплатформенности, производительности
@@ -413,3 +413,4 @@ public static void main(String args[]){
         }
     }
 ```
+
