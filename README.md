@@ -349,16 +349,17 @@ Button button = new Button(new EventHandler(){
 
 ```java
 public static void main(String args[]){
-    Account<String> acc1 = new Account<String>("123123", 123);
-    String accID=acc1.getId();
-    System.out.println(accID);
+    Account<String> acc1 = new Account<String>("123123", 123); //создаём объект
+    String accID=acc1.getId(); //получаем id
+    System.out.println(accID); //выводим id
 
+    //тоже самое, но с другим типом данных
     Account<Integer> acc2 = new Account<Integer>(123123, 123);
     Integer accID1=acc2.getId();
     System.out.println(accID1);
 }
 
-static class Account<T> {
+static class Account<T> { //создание обощенного класса
     private T id;
     private int sum;
     Account(T id, int sum){
@@ -370,10 +371,7 @@ static class Account<T> {
     public void getId(int sum){this.sum=sum;}
 }
 ```
-#### Интерфейсы также могут быть обобщёнными
-
-### Пример обобщенного интерфейса
-
+### Интерфейсы также могут быть обобщёнными
 ```java
 public static void main(String args[]){
         Accountable<String> acc1 = new Account("asfs", 235423);
@@ -413,4 +411,22 @@ public static void main(String args[]){
         }
     }
 ```
+
+### Пример использования обобщенного интерфейса
+```java
+class Account<T> implements Accoutable<T>{} //используем обобщённый интерфейс
+class Account1<T,S,A> implements Accoutable<T>{}
+```
+### Помимо обобщенных классов и интерфейсов, обобщёнными могут быть и методы
+```java
+public <T> void print(T[] items){}
+
+//вызов этого метода будет такой
+// <String>print(23,23,23);
+```
+
+### Большой пример
+![img_2.png](img_2.png)
+### Объяснение примера
+**В данном случае класс Transaction, который представляет операцию перевода средств между двумя счетами, типизирован параметром Т, у которого в качестве ограничения установлен класс Account. При создании объекта Transaction в его конструктор передаются два объекта Account два счета, между которыми надо осуществить перевод, и сумма перевода.**
 
