@@ -1,4 +1,3 @@
-
 # Java-lessons
 Лекции по ЯП Java
 
@@ -429,4 +428,31 @@ public <T> void print(T[] items){}
 ![img_2.png](images/img_2.png)
 ### Объяснение примера
 **В данном случае класс Transaction, который представляет операцию перевода средств между двумя счетами, типизирован параметром Т, у которого в качестве ограничения установлен класс Account. При создании объекта Transaction в его конструктор передаются два объекта Account два счета, между которыми надо осуществить перевод, и сумма перевода.**
+По простому:Позволяет наложить ограничения на использование типов данных(будет возможно подставить класс account или его дочерних классов)
+### В необобщённом классе может быть обобщённый конструктор
 
+```java
+class Account {
+    private String id;
+    private int sum;
+    
+    <T>Account(T id, int sum){
+        this.sum=sum;
+        this.id=id;
+    }
+}
+```
+### Множественные ограничения
+```java
+class Person{}
+interface Accountable{}
+class Transaction<T extends Person & Accountable>{}
+```
+### Наследование обобщённого класса
+```java
+class DepositAccount<T> extends Account<T>{
+    DepositAccount(T id){
+        super(id);
+    }
+}
+```
