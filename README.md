@@ -466,14 +466,6 @@ DepositAccount<Integer, String> depositAccount = new DepositAccount(20, "Том"
 ```
 ### ALT+INSERT - генерация конструкторов, геттеров, сеттеров и т.д.
 
-## Records
-### **Records** представляют классы, которые предназначены для создания контейнеров неизменяемых данных
-```java
-record name(){
-    //something
-}
-```
-
 ## Классы-обёртки
 ### Обёртка - специальный класс, который хранит внутри себя значение примитива
 ![imgWC.png](images/imgWC.png)
@@ -485,3 +477,26 @@ record name(){
 ### ВЫВОД
 - **Примитивы:** имеют преимущество в производительности
 - **Обёртки:** Позволяют не нарушать принцип "всё является объектом", благодаря чему числа, символы и булевы значения не выпадают из этой концепции
+
+## Records
+### **Records** представляют классы, которые предназначены для создания контейнеров неизменяемых данных
+```java
+record Person(String name, int age){
+    //something
+}
+```
+### Практический пример:
+```java
+package org.example;
+public class Main {
+    public static void main(String[] args) {
+            Person tom = new Person("Tom", 36);
+            System.out.println(tom.toString());
+        }
+
+        record Person(String name, int age){}
+    }
+```
+- Records определяются с помощью ключевого слова record, за которым следует название записи.
+- Также будет создаваться конструктор с двумя параметрами name и age. А каждого поля автоматически будет создаваться getter.
+- И также автоматически будут создаваться методы equals, hasCode и toString
