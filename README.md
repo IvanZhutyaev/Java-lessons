@@ -466,4 +466,7 @@ DepositAccount<Integer, String> depositAccount = new DepositAccount(20, "Том"
 ```
 ### ALT+INSERT - генерация конструкторов, геттеров, сеттеров и т.д.
 
+
 ## Классы-обёртки
+### Обёртка - специальный класс, который хранит внутри себя значение примитива
+![imgWC.png](images/imgWC.png)
