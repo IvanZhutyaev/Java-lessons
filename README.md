@@ -542,4 +542,13 @@ System.out.println(tom.toString());
 ### Все виды коллекций
 ![img.png](images/imgLists.png)
 
-### Итератор - объект, позволяющий пройтись по любому виду коллеций
+### Итератор - объект, позволяющий пройтись по любому виду коллекций
+
+```java
+import java.util.Iterator;
+
+Iterator<String> iterator=set.iterator();
+while(iterator.hasNext()){
+    String text = iterator.next();
+ }
+```
