@@ -511,3 +511,18 @@ Person(String name, int age){
 }
 ```
 <h4>Канонический конструктор принимает параметры, которые называются также, как и поля record, и передаёт полям значения соответствующих параметров. Но его можно переопределить!</h4>
+<h4>Пример:</h4>
+```java
+package org.example;
+public class Main {
+public static void main(String[] args) {
+Person tom = new Person("Tom", 36);
+System.out.println(tom.toString());
+}
+
+        record Person(String name, int age){
+            public String name(){return name;}
+            public String toString(){return String.format("Person %s, Age %d", name, age);}
+        }
+    }
+```
