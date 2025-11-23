@@ -465,3 +465,5 @@ class DepositAccount<T,S> extends Account<T>{} //T - тип родителя(Acc
 DepositAccount<Integer, String> depositAccount = new DepositAccount(20, "Том"); //Integer - тип для родителя, а String - тип для наследника
 ```
 ### ALT+INSERT - генерация конструкторов, геттеров, сеттеров и т.д.
+
+## Классы-обёртки
