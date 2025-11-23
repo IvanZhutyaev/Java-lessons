@@ -590,5 +590,7 @@ cats.toArray() - преобразования листа к массиву**
 
 ```java
 Collections.sort(); //Сортировка
+Collections.shuffle(); //Перемешать элементы коллекции
+Collections.unmodifiableList(); //Сделать коллекцию неизменяемой(прям кремень)
 ```
 
