@@ -585,3 +585,10 @@ public class Main {
 
 **Arrays.asList() - преобразование массива к листу<br>
 cats.toArray() - преобразования листа к массиву**
+
+### Часть методов вызывается из класса Collections
+
+```java
+Collections.sort(); //Сортировка
+```
+
