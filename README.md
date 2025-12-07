@@ -657,3 +657,5 @@ public class Main {
         }
     }
 ```
+
+## ArrayDeque - двоичная очередь, работает как LIFO, так и FIFO
