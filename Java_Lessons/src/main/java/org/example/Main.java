@@ -1,35 +1,28 @@
 package org.example;
 
 import java.util.EmptyStackException;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Stack;
 
 public class Main {
-    static void showpush(Stack st, int a) {
-        st.push(new Integer(a));
-        System.out.println("Поместить("+a+")");
-        System.out.println("Стек: "+st);
-    }
-    static void showpop(Stack st){
-        System.out.println("Выкинуть -> ");
-        Integer a = (Integer) st.pop();
-        System.out.println(a);
-        System.out.println("Стек: "+st);
-    }
 
     public static void main(String[] args) {
-        Stack st = new Stack();
-        System.out.println("Стек: "+st);
-        showpush(st,42);
-        showpush(st,69);
-        showpush(st,99);
-        showpop(st);
-        showpop(st);
-        showpop(st);
-        try {
-            showpop(st);
-        } catch (EmptyStackException e){
-            System.out.println("Пустой стек");
-        }
+        HashSet<String> h=new HashSet<String>();
+        h.add("USA");
+        h.add("India");
+        h.add("Russia");
+        h.add("USA");
+        System.out.println(h);
+        System.out.println("List contains USA or not:" +h.contains("USA"));
+
+        h.remove("India");
+        System.out.println("List after removing India:" +h);
+        System.out.println("Iterating over list:");
+        Iterator<String> i = h.iterator();
+        while ((i.hasNext()))
+            System.out.println(i.next());
+
     }
 }
 
