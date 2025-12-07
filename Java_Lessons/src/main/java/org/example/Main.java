@@ -1,28 +1,22 @@
 package org.example;
-
-import java.util.EmptyStackException;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Stack;
-
+import com.sun.source.tree.Tree;
+import java.util.*;
 public class Main {
-
     public static void main(String[] args) {
-        HashSet<String> h=new HashSet<String>();
-        h.add("USA");
-        h.add("India");
-        h.add("Russia");
-        h.add("USA");
-        System.out.println(h);
-        System.out.println("List contains USA or not:" +h.contains("USA"));
-
-        h.remove("India");
-        System.out.println("List after removing India:" +h);
-        System.out.println("Iterating over list:");
-        Iterator<String> i = h.iterator();
-        while ((i.hasNext()))
-            System.out.println(i.next());
-
+        TreeMap tm = new TreeMap<>();
+        tm.put("Заря", new Double(3434.34));
+        tm.put("Абрам", new Double(36734.34));
+        tm.put("Миша", new Double(376934.34));
+        Set set = tm.entrySet();
+        Iterator i = set.iterator();
+        while (i.hasNext()){
+            Map.Entry me = (Map.Entry)i.next();
+            System.out.println(me.getKey()+": ");
+            System.out.println(me.getValue());
+        }
+        System.out.println();
+        double balance = ((Double)tm.get("Заря")).doubleValue();
+        tm.put("Заря", new Double(balance+1000));
+        System.out.println("Новый баланс Зари: "+tm.get("Заря"));
     }
 }
-
