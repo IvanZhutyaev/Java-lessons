@@ -757,3 +757,11 @@ public interface UnaryOperator<T>{
     T apply(T t);
 }
 ```
+
+### Function<T,R>
+<b>Функциональный интерфейс, представляет функцию перехода от объекта типа T к объекту типа R</b>
+```java
+public interface Function<T, R>{
+    R apply(T t);
+}
+```
