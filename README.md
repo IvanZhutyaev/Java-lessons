@@ -774,3 +774,12 @@ public interface Consumer<T>{
     void accept(T t);
 }
 ```
+
+### Supplier<T>
+<b>Не принимает никаких аргументов, но должен возвращать объект типа T</b>
+
+```java
+public interface Supplier<T>{
+    T get();
+}
+```
