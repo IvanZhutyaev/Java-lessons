@@ -796,3 +796,9 @@ public interface Supplier<T>{
 
 ### Порождающие паттерны
 ![img.png](images/Порождающие.png)
+
+### Структурные паттерны
+![img.png](images/Структурные.png)
+
+### Поведенческие паттерны
+![img.png](images/Повенденческие.png)
