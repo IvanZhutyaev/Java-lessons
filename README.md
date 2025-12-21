@@ -739,3 +739,12 @@ public interface Predicate<T>{
     boolean test(T t);
 }
 ```
+
+### BinaryOperator<T>
+<b>Принимает в качесвте параметра два объекта типа T, выполняет над ними бинарную операцию и возвращает ее результат в виде объекта типа T</b>
+
+```java
+public interface BinaryOperator<T>{
+    T apply(T t1, T t2);
+}
+```
