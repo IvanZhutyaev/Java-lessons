@@ -748,3 +748,12 @@ public interface BinaryOperator<T>{
     T apply(T t1, T t2);
 }
 ```
+
+### UnaryOperator<T>
+<b>Принимает в качестве параметра объект типа T, выполняет над ними операции и возвращает результат операций в виде объекта типа T</b>
+
+```java
+public interface UnaryOperator<T>{
+    T apply(T t);
+}
+```
