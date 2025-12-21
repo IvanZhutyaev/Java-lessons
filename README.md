@@ -765,3 +765,12 @@ public interface Function<T, R>{
     R apply(T t);
 }
 ```
+
+### Consumer<T>
+<b>Выполняет некоторое действие над объектом типа T, при этом ничего не возвращая</b>
+
+```java
+public interface Consumer<T>{
+    void accept(T t);
+}
+```
