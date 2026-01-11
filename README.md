@@ -806,3 +806,5 @@ public interface Supplier<T>{
 
 
 ## Принципы разработки ПО
+### 1) DRY - Don't repeat yourself - "Не повторяйтесь"
+### 2)
