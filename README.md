@@ -1090,3 +1090,18 @@ public class Program {
     } 
 }
 ```
+
+<b>Метод reduce выполняет терминальные операции сведения, возвращая некоторое значение - результат операции</b>
+
+```java
+public class Program {
+ 
+    public static void main(String[] args) {
+         
+         
+        Stream<Integer> numbersStream = Stream.of(1,2,3,4,5,6);
+        Optional<Integer> result = numbersStream.reduce((x,y)->x*y);
+        System.out.println(result.get()); // 720
+    } 
+}
+```
