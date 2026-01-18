@@ -847,6 +847,7 @@ public interface Supplier<T>{
 
  ## Stream API
  <b>Stream API упрощает работу с коллекциями(фильтрация, сортировка и другие работы с данными)<br>Ключевым понятием в Stream API является поток данных - представляет собой канал передачи данных из файлов, массивов, коллекций</b>
+ 
 ```java
 package org.example;
 import java.util.stream.*;
@@ -960,5 +961,24 @@ phones.stream()
 
 ```
 
-### Получение подпотока т объединение потока
+### Получение подпотока и объединение потока
 <b>takeWhile - метод выбирает из потока элементы, пока они соответствуют условию. Если попадётся элемент, который не соотвествует условию, то метод завершит свою работу</b>
+
+```java
+public class Program {
+  
+    public static void main(String[] args) {
+          
+        Stream<Integer> numbers = Stream.of(-3, -2, -1, 0, 1, 2, 3, -4, -5);
+        numbers.takeWhile(n -> n < 0)
+            .forEach(n -> System.out.println(n));
+    }
+}
+```
+<b>dropWhile - метод выполняет обратную задачу - он пропускает элементы потока, которые соответсвуют условию до тех пор, пока не встретит элемент, который НЕ соответсвует условию</b> 
+
+```java
+Stream<Integer> numbers = Stream.of(-3, -2, -1, 0, 1, 2, 3, -4, -5);
+numbers.sorted().dropWhile(n -> n < 0)
+    .forEach(n -> System.out.println(n));
+```
