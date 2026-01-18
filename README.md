@@ -894,7 +894,8 @@ public class Main {
 - <b>.forEach - для перебора, является терминальной операцией
 - .filter - для фильтрации потока, является промежуточной операцией</b>
 - <b>.map - позволяет задать функцию преобразования одного объекта в другой, то есть получить из элемента одного типа элемент другого типа
-- .flatMap - позволяет из одного элемента нужно получить несколько</b>
+- .flatMap - позволяет из одного элемента нужно получить несколько
+- .sorted - сортировка, по умолчанию по возрастанию. *можно создать компаратор и передать в метод .sorted</b>
 ```java
 class Phone{
      
@@ -944,4 +945,20 @@ phoneStream
             String.format("название: %s  цена со скидкой: %d", p.getName(), p.getPrice() - (int)(p.getPrice()*0.1))
     ))
     .forEach(s->System.out.println(s));
+
+
+// Пример с .sorted()
+List<String> phones = new ArrayList<String>();
+        Collections.addAll(phones, "iPhone X", "Nokia 9", "Huawei Nexus 6P",
+                "Samsung Galaxy S8", "LG G6", "Xiaomi MI6",
+                "ASUS Zenfone 3", "Sony Xperia Z5", "Meizu Pro 6",
+                "Pixel 2");
+phones.stream()
+           .filter(p->p.length()<12)
+           .sorted() // сортировка по возрастанию
+           .forEach(s->System.out.println(s));
+
 ```
+
+### Получение подпотока т объединение потока
+<b>takeWhile - метод выбирает из потока элементы, пока они соответствуют условию. Если попадётся элемент, который не соотвествует условию, то метод завершит свою работу</b>
