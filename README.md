@@ -893,7 +893,8 @@ public class Main {
 
 - <b>.forEach - для перебора, является терминальной операцией
 - .filter - для фильтрации потока, является промежуточной операцией</b>
-- <b>.map - позволяет задать функцию преобразования одного объекта в другой, то есть получить из элемента одного типа элемент другого типа</b>
+- <b>.map - позволяет задать функцию преобразования одного объекта в другой, то есть получить из элемента одного типа элемент другого типа
+- .flatMap - позволяет из одного элемента нужно получить несколько</b>
 ```java
 class Phone{
      
@@ -936,4 +937,12 @@ phoneStream
 phoneStream
     .map(p-> "название: " + p.getName() + " цена: " + p.getPrice())
     .forEach(s->System.out.println(s));
+
+phoneStream
+    .flatMap(p->Stream.of(
+            String.format("название: %s  цена без скидки: %d", p.getName(), p.getPrice()),
+            String.format("название: %s  цена со скидкой: %d", p.getName(), p.getPrice() - (int)(p.getPrice()*0.1))
+    ))
+    .forEach(s->System.out.println(s));
+
 ```
