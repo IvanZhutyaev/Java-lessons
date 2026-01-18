@@ -944,5 +944,4 @@ phoneStream
             String.format("название: %s  цена со скидкой: %d", p.getName(), p.getPrice() - (int)(p.getPrice()*0.1))
     ))
     .forEach(s->System.out.println(s));
-
 ```
