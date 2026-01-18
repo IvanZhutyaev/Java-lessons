@@ -864,3 +864,16 @@ public class Main {
 - <b>Потоки не хранят элементы. Элементы, используемые в потоках, могут храниться в коллекции, либо при необходимости могут быть напрямую сгенерированы.
 - Операции с потоками не изменяют источника данных. Операции с потоками лишь возвращают новый поток с результатами этих операций.
 - Для потоков характерно отложенное выполнение. То есть выполнение всех операций с потоком происходит лишь тогда, когда выполняется терминальная операция и возвращается конкретный результат, а не новый поток.</b>
+
+```java
+package org.example;
+import java.util.ArrayList;
+import java.util.Collections;
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        Collections.addAll(list, "oregerg", "saffsa", "sdf", "safplr", "wedf33fd");
+        list.stream().filter(s->s.length()>6).forEach(System.out::println);
+    }
+}
+```
