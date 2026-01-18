@@ -998,7 +998,7 @@ public class Program {
 }
 ```
 
-<b> - возвращет только уникальные элементы в виде потока</b>
+<b>distinct - возвращет только уникальные элементы в виде потока</b>
 
 ```java
 Stream<String> people = Stream.of("Tom", "Bob", "Sam", "Tom", "Alice", "Kate", "Sam");
