@@ -921,4 +921,11 @@ class Phone{
         this.price = price;
     }
 }
+
+// Отфильтруем набор телефонов по цене:
+Stream<Phone> phoneStream = Stream.of(new Phone("iPhone 6 S", 54000), new Phone("Lumia 950", 45000),
+                new Phone("Samsung Galaxy S 6", 40000));
+         
+phoneStream.filter(p->p.getPrice()<50000).forEach(p->System.out.println(p.getName()));
+
 ```
