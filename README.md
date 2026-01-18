@@ -1013,3 +1013,36 @@ phoneStream.skip(1)
     .limit(2)
     .forEach(s->System.out.println(s));
 ```
+
+### Операции сведения
+<b>count - возвращает количесвто элементов потока</b>
+
+```java
+public class Program {
+ 
+    public static void main(String[] args) {
+         
+        ArrayList<String> names = new ArrayList<String>();
+        names.addAll(Arrays.asList(new String[]{"Tom", "Sam", "Bob", "Alice"}));
+        System.out.println(names.stream().count());  // 4
+         
+        // количество элементов с длиной не больше 3 символов
+        System.out.println(names.stream().filter(n->n.length()<=3).count());  // 3
+    } 
+}
+```
+
+<b>findFirst() - извлекает из потока первый элемент, а findAny() извлекает случайный объект из потока (нередко так же первый)</b>
+
+```java
+ArrayList<String> names = new ArrayList<String>();
+names.addAll(Arrays.asList(new String[]{"Tom", "Sam", "Bob", "Alice"}));
+ 
+Optional<String> first = names.stream().findFirst();
+System.out.println(first.get());    // Tom
+ 
+Optional<String> any = names.stream().findAny();
+System.out.println(first.get());    // Tom
+```
+
+<b></b>
