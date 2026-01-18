@@ -932,4 +932,8 @@ phoneStream.filter(p->p.getPrice()<50000).forEach(p->System.out.println(p.getNam
 phoneStream
     .map(p-> p.getName()) // помещаем в поток только названия телефонов
     .forEach(s->System.out.println(s));
+
+phoneStream
+    .map(p-> "название: " + p.getName() + " цена: " + p.getPrice())
+    .forEach(s->System.out.println(s));
 ```
