@@ -846,4 +846,14 @@ public interface Supplier<T>{
  - D - Абстрация не должна зависеть от деталей. Детали должны зависеть от абстракции</b>
 
  ## Stream API
- <b>Stream API упрощает работу с коллекциями(фильтрация, сортировка и другие работы с данными)</b>
+ <b>Stream API упрощает работу с коллекциями(фильтрация, сортировка и другие работы с данными)<br>Ключевым понятием в Stream API является поток данных - представляет собой канал передачи данных из файлов, массивов, коллекций</b>
+```java
+package org.example;
+import java.util.stream.*;
+public class Main {
+    public static void main(String[] args) {
+        long count = IntStream.of(-5,-4,-3,-3,0,1,2,3,4,5).filter(w->w>0).count();
+        System.out.println(count);
+    }
+}
+```
