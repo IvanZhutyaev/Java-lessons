@@ -1004,3 +1004,11 @@ public class Program {
 Stream<String> people = Stream.of("Tom", "Bob", "Sam", "Tom", "Alice", "Kate", "Sam");
 people.distinct().forEach(p -> System.out.println(p));
 ```
+
+<b>skip(long n) - метод используется для пропуска n элементов<br>limit(long n) - метод применяется для выборки первых n элементов потоков</b>
+
+```java
+phoneStream.skip(1)
+    .limit(2)
+    .forEach(s->System.out.println(s));
+```
