@@ -888,5 +888,5 @@ public class Main {
 
 ```java
 //Ещё один способ создания потока представляет собой статический метод of(T values) класса Stream
- Stream<String> citiesStream =Stream.of("Париж", "Лондон", "Мадрид"); 
+ Stream<String> citiesStream = Stream.of("Париж", "Лондон", "Мадрид"); 
 ```
