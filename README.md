@@ -1008,6 +1008,7 @@ people.distinct().forEach(p -> System.out.println(p));
 <b>skip(long n) - метод используется для пропуска n элементов<br>limit(long n) - метод применяется для выборки первых n элементов потоков</b>
 
 ```java
+Stream<String> phoneStream = Stream.of("iPhone 6 S", "Lumia 950", "Samsung Galaxy S 6", "LG G 4", "Nexus 7");
 phoneStream.skip(1)
     .limit(2)
     .forEach(s->System.out.println(s));
