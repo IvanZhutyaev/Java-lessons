@@ -929,3 +929,4 @@ Stream<Phone> phoneStream = Stream.of(new Phone("iPhone 6 S", 54000), new Phone(
 phoneStream.filter(p->p.getPrice()<50000).forEach(p->System.out.println(p.getName()));
 
 ```
+- <b>.map - позволяет задать функцию преобразования одного объекта в другой, то есть получить из элемента одного типа элемент другого типа</b>
