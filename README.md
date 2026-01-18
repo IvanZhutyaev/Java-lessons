@@ -1045,4 +1045,7 @@ Optional<String> any = names.stream().findAny();
 System.out.println(first.get());    // Tom
 ```
 
-<b></b>
+<b>Еще одна группа операций сведения возвращает логическое значение true или false:</b>
+- <b>boolean allMatch(Predicate<? super T> predicate): возвращает true, если все элементы потока удовлетворяют условию в предикате
+- boolean anyMatch(Predicate<? super T> predicate): возвращает true, если хоть один элемент потока удовлетворяют условию в предикате
+- boolean noneMatch(Predicate<? super T> predicate): возвращает true, если ни один из элементов в потоке не удовлетворяет условию в предикате</b>
