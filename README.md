@@ -847,7 +847,7 @@ public interface Supplier<T>{
 
  ## Stream API
  <b>Stream API упрощает работу с коллекциями(фильтрация, сортировка и другие работы с данными)<br>Ключевым понятием в Stream API является поток данных - представляет собой канал передачи данных из файлов, массивов, коллекций</b>
- 
+
 ```java
 package org.example;
 import java.util.stream.*;
@@ -981,4 +981,26 @@ public class Program {
 Stream<Integer> numbers = Stream.of(-3, -2, -1, 0, 1, 2, 3, -4, -5);
 numbers.sorted().dropWhile(n -> n < 0)
     .forEach(n -> System.out.println(n));
+```
+
+<b>concat - объединяет элементы двух потоков, возвращая объединённый поток</b>
+
+```java
+public class Program {
+  
+    public static void main(String[] args) {
+          
+        Stream<String> people1 = Stream.of("Tom", "Bob", "Sam");
+        Stream<String> people2 = Stream.of("Alice", "Kate", "Sam");
+         
+        Stream.concat(people1, people2).forEach(n -> System.out.println(n));
+    }
+}
+```
+
+<b> - возвращет только уникальные элементы в виде потока</b>
+
+```java
+Stream<String> people = Stream.of("Tom", "Bob", "Sam", "Tom", "Alice", "Kate", "Sam");
+people.distinct().forEach(p -> System.out.println(p));
 ```
