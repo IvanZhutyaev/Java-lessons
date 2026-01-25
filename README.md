@@ -1110,3 +1110,14 @@ public class Program {
 <b>ПОЗВОЛЯЕТ ИЗБЕЭАТЬ NULL-ЗНАЧЕНИЕ. После выполнения операции с помощью метода get() объекта Optional мы можем получить его значение</b>
 
 ![img.png](images/Optional.png)
+
+```java
+import java.util.ArrayList;
+import java.util.Optional;
+
+ArrayList<Integer> numbers = new ArrayList<Integer>();
+Optional<Integer> min1 = numbers.stream().min(Integer::compare);
+if(min1.isPresent()){
+    System.out.println(min1.get());
+}
+```
