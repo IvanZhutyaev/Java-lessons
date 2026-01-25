@@ -1121,3 +1121,5 @@ if(min1.isPresent()){
     System.out.println(min1.get());
 }
 ```
+
+<b>Метод isPresent() возвращает true, если значение присутствует в Optional, и false, если значение отсутствует</b>
