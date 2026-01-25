@@ -1134,3 +1134,7 @@ if(min1.isPresent()){
 <b>orElseGet - позволяет задать функцию, которая будет возвращать значение епо умолчанию</b>
 ![img.png](images/lferl;fgt.png)
 
+<br>
+
+<b>orElseThrow - позволяет сгенерировать исключение, если Optional не содержит значения</b>
+![img.png](images/шукомпшщкеецп.png)
