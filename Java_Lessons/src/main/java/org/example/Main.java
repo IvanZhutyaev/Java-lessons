@@ -1,22 +1,35 @@
 package org.example;
-import com.sun.source.tree.Tree;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
 public class Main {
     public static void main(String[] args) {
-        TreeMap tm = new TreeMap<>();
-        tm.put("Заря", new Double(3434.34));
-        tm.put("Абрам", new Double(36734.34));
-        tm.put("Миша", new Double(376934.34));
-        Set set = tm.entrySet();
-        Iterator i = set.iterator();
-        while (i.hasNext()){
-            Map.Entry me = (Map.Entry)i.next();
-            System.out.println(me.getKey()+": ");
-            System.out.println(me.getValue());
+        //1
+        List<Integer> a=new ArrayList<>();
+        a.addAll(Arrays.asList(new Integer[]{4,5,6,7,8,9}));
+        Optional<Integer> max = a.stream().max(Integer::compareTo);
+        System.out.println(max.orElse(0));
+        max.ifPresent(v-> System.out.println(v));
+        Optional<Integer> max1 = a.stream().max(Integer::compareTo);
+        System.out.println(max1.map(v->"Max:"+v).get());
+
+        //2
+        List<User> users = new ArrayList<>();
+        User ivan = new User("Ivan", true);
+        User vova = new User("Vova", false);
+        users.addAll(Arrays.asList(new User[]{ivan,vova}));
+
+        System.out.println(users.stream().filter(as->as.active==true).findFirst().map(h->"Login:"+h.login).orElse("Defolt"));
+    }
+    static class User {
+        String login;
+        boolean active;
+        public User(String login, boolean active){
+            this.login=login;
+            this.active=active;
         }
-        System.out.println();
-        double balance = ((Double)tm.get("Заря")).doubleValue();
-        tm.put("Заря", new Double(balance+1000));
-        System.out.println("Новый баланс Зари: "+tm.get("Заря"));
     }
 }
