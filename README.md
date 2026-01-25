@@ -1105,3 +1105,8 @@ public class Program {
     } 
 }
 ```
+
+## Тип Optional
+<b>После выполнения операции с помощью метода get() объекта Optional мы можем получить его значение</b>
+
+![img.png](images/Optional.png)
