@@ -1204,3 +1204,27 @@ JThread finished...
 // ОНИ ВЫПОЛНЯЮТСЯ ОДНОВРЕМНЕНО(ПАРАЛЛЕЛЬНО), ВЫВОД В КОНСОЛИ НЕ ПОКАЗАТЕЛЬ ПООЧЕРЁДНОСТИ, ВЕДЬ ИДУТ СРАЗУ 2 ОПЕРАЦИИ!
 ```
 <b>Для создания нового потока мы можем создать новый класс, либо наследую его от класса Thread, либо реализую в классе интерфейс Runnable</b>
+
+<b>Работа .join()</b>
+```java
+ public static void main(String[] args) {
+        System.out.println("Main thread started...");
+        JThread t=new JThread("JThread");
+        t.start();
+        try {
+            t.join();
+        }
+        catch (InterruptedException e){
+            System.out.printf("%s has been interrupted", t.getName());
+        }
+        System.out.println("Main thread finished...");
+    }
+```
+<b>Вывод:</b>
+```java
+Main thread started...
+JThread started... 
+JThread finished... 
+Main thread finished...
+// Текущий поток будет ждать завершения потока, для которого вызван метод .join()
+```
