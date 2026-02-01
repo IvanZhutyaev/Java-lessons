@@ -1250,3 +1250,36 @@ public static void main(String[] args) {
 ```
 
 <b>Если в программе используется несколько дочерних потоков, и надо, чтобы Main thread завершался после дочерних то для каждого потока надо вызвать метод .join()</b>
+
+### Создание потока через Runnable
+```java
+package org.example;
+public class Main {
+    static class MyThread implements Runnable{
+        @Override
+        public void run() {
+            System.out.printf("%s started ... \n", Thread.currentThread().getName());
+            try{
+                Thread.sleep(500);
+            }
+            catch (InterruptedException e){
+                System.out.println("Thread has been interrupted");
+            }
+            System.out.printf("%s finished ... \n", Thread.currentThread().getName());
+        }
+    }
+    public static void main(String[] args) {
+        System.out.println("Main thread started...");
+        Thread mythread = new Thread(new MyThread(), "MyThread");
+        mythread.start();
+        System.out.println("Main thread finished...");
+    }
+}
+```
+<b>Вывод:</b>
+```text
+Main thread started...
+Main thread finished...
+MyThread started ... 
+MyThread finished ... 
+```
