@@ -1153,3 +1153,16 @@ if(min1.isPresent()){
 ## Многопоточное программирование
 <b>Многопоточное программирование - одновременное выполнение нескольких задач <br>
 Не путать с StreamAPI - в Stream API потоки для Коллекций</b>
+
+### Класс Thread
+<b>В Java функциональность отдельного потока заключается в класс Thread <br>Thread.currentThread() - мы можем получить текущий поток выполнения</b>
+
+```java
+package org.example;
+public class Main {
+    public static void main(String[] args) {
+        Thread t = Thread.currentThread();
+        System.out.println(t.getName()); //main - главный поток по умолчанию
+    }
+}
+```
