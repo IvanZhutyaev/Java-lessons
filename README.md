@@ -1283,3 +1283,60 @@ Main thread finished...
 MyThread started ... 
 MyThread finished ... 
 ```
+
+### Завершение потока: пример через опрос логической переменной
+```java
+package org.example;
+public class Main {
+    static class MyThread implements Runnable{
+       private boolean isActive;
+      public void disable(){
+           isActive=false;
+       }
+       MyThread(){
+           isActive=true;
+       }
+       public void run(){
+           System.out.printf("%s started ... \n", Thread.currentThread().getName());
+            int counter=1;
+            while (isActive){
+                System.out.println("Loop "+counter++);
+                try{
+                    Thread.sleep(400);
+                }
+                catch (InterruptedException e){
+                    System.out.println("Thread has been interrupted");
+
+                }
+            }
+           System.out.printf("%s finished ... \n", Thread.currentThread().getName());
+
+       }
+    }
+    public static void main(String[] args) {
+        System.out.println("Main thread started...");
+        MyThread mythread = new MyThread();
+        new Thread(mythread,"Mythread").start();
+        try{
+            Thread.sleep(1100);
+            mythread.disable();
+            Thread.sleep(1000);
+        }
+        catch (InterruptedException e){
+            System.out.println("Thread has been interrupted");
+        }
+        System.out.println("Main thread finished...");
+    }
+}
+```
+
+<b>Вывод:</b>
+```text
+Main thread started...
+Mythread started ... 
+Loop 1
+Loop 2
+Loop 3
+Mythread finished ... 
+Main thread finished...
+```
