@@ -1248,3 +1248,5 @@ public static void main(String[] args) {
         System.out.println("Main thread finished...");
     }
 ```
+
+<b>Если в программе используется несколько дочерних потоков, и надо, чтобы Main thread завершался после дочерних то для каждого потока надо вызвать метод .join()</b>
