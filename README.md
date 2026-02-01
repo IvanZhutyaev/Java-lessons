@@ -1230,3 +1230,21 @@ Main thread finished...
 ```
 
 <b>Метод .join() заставляет вызвавший поток(Main) ожидать завершения вызываемого потока, для которого и применяется метод join()(JThread)</b>
+
+<b>Main будет ждать завершения всех потоков:</b>
+```java
+public static void main(String[] args) {
+        System.out.println("Main thread started...");
+        for(int i=0; i<10;i++){
+            JThread t=new JThread("JThread");
+            t.start();
+            try {
+                t.join();
+            }
+            catch (InterruptedException e){
+                System.out.printf("%s has been interrupted", t.getName());
+            }
+        }
+        System.out.println("Main thread finished...");
+    }
+```
