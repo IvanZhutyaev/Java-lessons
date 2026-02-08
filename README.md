@@ -1347,3 +1347,6 @@ Main thread finished...
 <b>Проще говоря метод interrupt меняет значение isInterrupted на true)</b>
 
 <b>При реализации интерфейса Runnable используется метод thread.currentThread().isInterrupted() - проверить статус потока</b>
+
+### Синхронизация потоков. Оператор synchronized
+<b>Synchronized позволяет заблокировать данные(функцию), чтобы только один поток мог одновременно с ней работать</b>
